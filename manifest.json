@@ -1,0 +1,20 @@
+{
+  "name": "Mint Preview",
+  "description": "Previews a page that is being developed",
+  "version": "0.0.7",
+  "background": {
+     "scripts": ["background.js"],
+     "persistent": false
+   },
+  "browser_action": {
+      "name": "Preview",
+      "default_icon" : "assets/preview_disabled-32.png",
+      "default_title" : "Preview available !"
+  },
+  "permissions": ["declarativeContent","tabs"],
+  "icons" : {
+    "128" : "assets/preview_enabled-128.png"
+  },
+  
+  "manifest_version": 2
+}
