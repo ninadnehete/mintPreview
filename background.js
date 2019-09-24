@@ -40,7 +40,6 @@ if (tabs[0] && tabs[0].url)
 }
 
 function enableBrowserAction(tabId, changeInfo, tabInfo){
-debugger
     chrome.tabs.get(tabId, function (tab){
 	if (tab.url.search("datonis.io") >= 0){
   chrome.browserAction.enable(tab.id);
@@ -52,6 +51,7 @@ debugger
 	})
 }
 
+/*
 chrome.tabs.onActivated.addListener(function(activeInfo) {
 
     chrome.tabs.get(activeInfo.tabId, function (tab){
@@ -64,7 +64,8 @@ chrome.tabs.onActivated.addListener(function(activeInfo) {
 	}
 	})
 });
+*/
 
 chrome.tabs.onUpdated.addListener(enableBrowserAction)
 
-//chrome.browserAction.onClicked.addListener(forcePreview)
+chrome.browserAction.onClicked.addListener(forcePreview)
